@@ -1,0 +1,196 @@
+TITLE:  Association Demographics and Item-level Semantic Fluency -
+     Age as main independent variable;
+
+    DATA:
+      FILE = "insertfilelocation";
+
+    VARIABLE:
+      NAMES =  id sex totscore intrus persev cluswi clusize lexFQ
+               lexRT Zipf AoA edu1 ageT1 lexFQ10 lexRT10 Zipf10
+               AoA10;
+      MISSING = ALL (-999);
+
+      USEVARIABLES = id totscore cluswi clusize
+      ageT1 lexFQ lexRT Zipf
+      AoA;
+
+      IDVARIABLE = id;
+
+      CENTER grand mean (ageT1);
+
+
+    DEFINE:
+      STANDARDIZE totscore cluswi
+      clusize lexFQ lexRT Zipf AoA;
+
+
+    ANALYSIS:
+        ESTIMATOR = MLR;
+
+
+    MODEL:
+
+          clusize on ageT1;
+          cluswi on ageT1;
+          totscore on ageT1;
+          lexFQ on ageT1;
+          lexRT on ageT1;
+          Zipf on ageT1;
+          AoA on ageT1;
+
+          clusize WITH cluswi@0;
+          clusize WITH totscore@0;
+          clusize WITH lexFQ@0;
+          clusize WITH lexRT@0;
+          clusize WITH Zipf@0;
+          clusize WITH AoA@0;
+          cluswi WITH totscore@0;
+          cluswi WITH lexFQ@0;
+          cluswi WITH lexRT@0;
+          cluswi WITH Zipf@0;
+          cluswi WITH AoA@0;
+          totscore WITH lexFQ@0;
+          totscore WITH lexRT@0;
+          totscore WITH Zipf@0;
+          totscore WITH AoA@0;
+          lexFQ WITH lexRT@0;
+          lexFQ WITH Zipf@0;
+          lexFQ WITH AoA@0;
+          lexRT WITH Zipf@0;
+          lexRT WITH AoA@0;
+          Zipf WITH AoA@0;
+
+
+      OUTPUT:  CINTERVAL;
+      
+      
+      
+      
+      
+      
+TITLE:  Association Demographics and Item-level Semantic Fluency -
+     Sex as main independent variable;
+
+    DATA:
+      FILE = "insertfilelocation";
+
+    VARIABLE:
+      NAMES =  id sex totscore intrus persev cluswi clusize lexFQ
+               lexRT Zipf AoA edu1 ageT1 lexFQ10 lexRT10 Zipf10
+               AoA10;
+      MISSING = ALL (-999);
+
+      USEVARIABLES = id sex totscore cluswi clusize
+      lexFQ lexRT Zipf AoA;
+
+      IDVARIABLE = id;
+
+
+    DEFINE:
+      STANDARDIZE totscore cluswi
+      clusize lexFQ lexRT Zipf AoA;
+
+
+    ANALYSIS:
+        ESTIMATOR = MLR;
+
+
+    MODEL:
+
+          clusize on sex;
+          cluswi on sex;
+          totscore on sex;
+          lexFQ on sex;
+          lexRT on sex;
+          Zipf on sex;
+          AoA on sex;
+
+          clusize WITH cluswi@0;
+          clusize WITH totscore@0;
+          clusize WITH lexFQ@0;
+          clusize WITH lexRT@0;
+          clusize WITH Zipf@0;
+          clusize WITH AoA@0;
+          cluswi WITH totscore@0;
+          cluswi WITH lexFQ@0;
+          cluswi WITH lexRT@0;
+          cluswi WITH Zipf@0;
+          cluswi WITH AoA@0;
+          totscore WITH lexFQ@0;
+          totscore WITH lexRT@0;
+          totscore WITH Zipf@0;
+          totscore WITH AoA@0;
+          lexFQ WITH lexRT@0;
+          lexFQ WITH Zipf@0;
+          lexFQ WITH AoA@0;
+          lexRT WITH Zipf@0;
+          lexRT WITH AoA@0;
+          Zipf WITH AoA@0;
+
+
+      OUTPUT:  CINTERVAL;
+      
+      
+      
+      
+TITLE:  Association Demographics and Item-level Semantic Fluency -
+     Education as main independent variable;
+
+    DATA:
+      FILE = "insertfilelocation";
+
+    VARIABLE:
+      NAMES =  id sex totscore intrus persev cluswi clusize lexFQ
+               lexRT Zipf AoA edu1 ageT1 lexFQ10 lexRT10 Zipf10
+               AoA10;
+      MISSING = ALL (-999);
+
+      USEVARIABLES = id totscore cluswi clusize
+      lexFQ lexRT Zipf AoA edu1;
+
+      IDVARIABLE = id;
+
+
+    DEFINE:
+      STANDARDIZE totscore cluswi
+      clusize lexFQ lexRT Zipf AoA;
+
+
+    ANALYSIS:
+        ESTIMATOR = MLR;
+
+
+    MODEL:
+
+          clusize on edu1;
+          cluswi on edu1;
+          totscore on edu1;
+          lexFQ on edu1;
+          lexRT on edu1;
+          Zipf on edu1;
+          AoA on edu1;
+
+          clusize WITH cluswi@0;
+          clusize WITH totscore@0;
+          clusize WITH lexFQ@0;
+          clusize WITH lexRT@0;
+          clusize WITH Zipf@0;
+          clusize WITH AoA@0;
+          cluswi WITH totscore@0;
+          cluswi WITH lexFQ@0;
+          cluswi WITH lexRT@0;
+          cluswi WITH Zipf@0;
+          cluswi WITH AoA@0;
+          totscore WITH lexFQ@0;
+          totscore WITH lexRT@0;
+          totscore WITH Zipf@0;
+          totscore WITH AoA@0;
+          lexFQ WITH lexRT@0;
+          lexFQ WITH Zipf@0;
+          lexFQ WITH AoA@0;
+          lexRT WITH Zipf@0;
+          lexRT WITH AoA@0;
+          Zipf WITH AoA@0;
+
+
+      OUTPUT:  CINTERVAL;
